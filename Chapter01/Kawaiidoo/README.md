@@ -132,3 +132,8 @@ int main()
 https://zhidao.baidu.com/question/35405295.html
 https://blog.csdn.net/qq_39345059/article/details/78266526
 https://blog.csdn.net/qq_41269379/article/details/81669927
+
+## 1.17
+
+如果输入的所有值都相同，则输出一行 该值出现了（输入个数）次
+如果输入的值都不相同，则输出（输入个数）行 每个值出现了一次
