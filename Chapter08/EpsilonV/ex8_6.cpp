@@ -1,7 +1,8 @@
+#include "ex8_6.h"
 #include <fstream>
 #include <iostream>
 
-#include "ex8_6.h"
+
 using namespace std;
 
 int main(int argc, char **argv)
