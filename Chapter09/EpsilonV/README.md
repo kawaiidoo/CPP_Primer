@@ -83,3 +83,39 @@ begin 返回容器的iterator类型，cbegin返回容器的const_iterator类型�
 ## ex9.12
 
 接受容器创建拷贝要求两个容器的类型及其元素类型必须匹配，并且是拷贝整个容器。迭代器拷贝只要求元素能够进行转换，并且可以拷贝容器的部分元素。
+
+## ex9.14
+
+    list<char *> lchar{"hello", "world"};
+    vector<string> vstring;
+    vstring.assign(lchar.cbegin(), lchar.cend());
+
+## ex9.17
+
+c1 和 c2必须是相同类型的容器，且不是无序关联容器。
+
+## ex9.21
+
+和插入list是一样的。iter初始化为vec.begin();每次insert后，iter变为当前插入元素的位置。
+
+## ex9.22
+
+    #include <iostream>
+    #include <vector>
+    
+    void double_and_insert(std::vector<int>& v, int some_val)
+    {
+        auto mid = [&]{ return v.begin() + v.size() / 2; };
+        for (auto curr = v.begin(); curr != mid(); ++curr)
+            if (*curr == some_val)
+                ++(curr = v.insert(curr, 2 * some_val));
+    }
+    
+    int main()
+    {
+        std::vector<int> v{ 1, 9, 1, 9, 9, 9, 1, 1 };
+        double_and_insert(v, 1);
+    
+        for (auto i : v) 
+            std::cout << i << std::endl;
+    }
